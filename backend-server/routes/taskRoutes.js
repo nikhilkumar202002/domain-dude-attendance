@@ -13,6 +13,7 @@ router.post('/', verifyToken, authorizeRoles('CEO', 'Team Lead'), taskController
 router.get('/', verifyToken, taskController.getTasks);
 
 // Route: Update Task (Staff updating their work)
-router.put('/update', verifyToken, authorizeRoles('Staff'), taskController.updateTaskStatus);
+router.put('/:id', verifyToken, taskController.updateTask);
+router.delete('/:id', verifyToken, taskController.deleteTask);
 
 module.exports = router;
