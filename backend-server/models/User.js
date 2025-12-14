@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
     role: { 
         type: String, 
         enum: ['CEO', 'Team Lead', 'Staff'], 
-        default: 'Staff' 
+        default: 'Staff' ,
+        profileImage: { type: String }
     }
 });
 
